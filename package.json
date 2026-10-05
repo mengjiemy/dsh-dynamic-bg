@@ -1,0 +1,56 @@
+{
+  "name": "dsh-dynamic-bg",
+  "version": "0.1.0",
+  "description": "给 DSH 铺整屏动态背景：静态图 / GIF / 视频三种都支持，配可调蒙版、模糊、不透明度与面板半透明。只改 CSS 变量、不碰哈希类名。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis",
+    "background",
+    "wallpaper",
+    "video-wallpaper",
+    "animated-background"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "files": [
+    "lib/",
+    "cordis.patch.yml",
+    "src/",
+    "scripts/",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-workspace",
+        "@deepseek-ai/dsh-typert-registry",
+        "@deepseek-ai/dsh-client-connection"
+      ],
+      "platform": "web"
+    },
+    "engines": {
+      "dsh": ">=0.1.5-rc.1"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mengjiemy/dsh-dynamic-bg.git"
+  },
+  "homepage": "https://github.com/mengjiemy/dsh-dynamic-bg#readme"
+}

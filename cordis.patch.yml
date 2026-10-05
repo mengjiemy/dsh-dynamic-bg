@@ -1,0 +1,10 @@
+# dsh-dynamic-bg —— bundle patch
+#
+# 这一行才是让本包成为「profile 层」的东西：只有 dsh.bundle.patch 存在时，
+# DSH 才会在 profile 启动时挂载它。
+# ⚠️ 只声明 dsh.client 的插件会被安装闸门直接拒：
+#    "declares only `dsh.client` — that alone is not installable"
+#    ⇒ 所以本包同时声明 dsh.bundle 和 dsh.client。
+- insert:
+    - id: dynamic-bg
+      name: 'dsh-dynamic-bg'
